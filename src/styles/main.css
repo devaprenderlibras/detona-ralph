@@ -1,8 +1,14 @@
+body{
+  height: 100vh;
+  width: 100vw;
+}
+
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   background-image: url("../imgs/wall.png");
+  background-size: 200px;
 }
 
 .menu {
@@ -30,16 +36,28 @@
 
 .panel {
   display: flex;
+  gap: 2rem;
+
+  height: 100%;
+  flex-direction: column;
+
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
 }
 
+.panel-row{
+  display: flex;
+  gap: 1rem;
+}
+
 .square {
-  height: 150px;
-  width: 150px;
-  border: 1px solid #000000;
-  background-color: #1aeaa5;
+  height: 200px;
+  width: 200px;
+  /* border: 1px solid #000000; */
+  background: url("../imgs/janela-sem-ralph.png");
+  background-size: cover;
+  /* background-color: #1aeaa5; */
 }
 
 .square:hover {
@@ -48,6 +66,6 @@
 }
 
 .enemy {
-  background-image: url("../imgs/ralph.png");
+  background: url("../imgs/janela-ralph.png");
   background-size: cover;
 }
