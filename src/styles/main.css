@@ -42,6 +42,11 @@
   background-color: #1aeaa5;
 }
 
+.square:hover {
+  background-color: #15c489;
+  transition-duration: 0.5s;
+}
+
 .enemy {
   background-image: url("../imgs/ralph.png");
   background-size: cover;
