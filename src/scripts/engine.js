@@ -8,6 +8,8 @@ const state = {
   values: {
     timerId: null,
     gameVelocity: 1000,
+    hitPosition: 0,
+    result: 0,
   },
 };
 
@@ -24,15 +26,24 @@ function randomSquare() {
   let randomSquare = state.view.squares[randomNumber];
 
   randomSquare.classList.add("enemy");
-  enemy = randomSquare;
+  state.values.hitPosition = randomSquare.id;
 }
 
 function addListenerHitBox() {
-  state.view.squares.forEach((square) => {});
+  state.view.squares.forEach((square) => {
+    square.addEventListener("mousedown", () => {
+      if (square.id === state.values.hitPosition) {
+        state.values.hitPosition = null;
+        state.values.result++;
+        state.view.score.textContent = state.values.result;
+      }
+    });
+  });
 }
 
 function init() {
   moveEnemy();
+  addListenerHitBox();
 }
 
 init();
